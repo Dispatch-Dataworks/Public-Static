@@ -428,45 +428,6 @@
     .kv b{color:var(--text)}
     .kv a{color:var(--text); text-decoration:underline; text-decoration-color: rgba(255,255,255,.25); text-underline-offset:3px}
 
-    form{margin-top:14px}
-    .row{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
-    label{display:block; font-size:12px; color:var(--muted2); margin:0 0 6px}
-    input, textarea{
-      width:100%;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(7,10,18,.40);
-      color:var(--text);
-      padding:12px 12px;
-      outline:none;
-      transition: border-color .2s ease, background .2s ease;
-      font-family:inherit;
-      font-size:13px;
-    }
-    input:focus, textarea:focus{
-      border-color: rgba(78,163,255,.45);
-      background: rgba(7,10,18,.55);
-    }
-    textarea{min-height:120px; resize:vertical}
-    .formActions{
-      display:flex; gap:10px; align-items:center; margin-top:12px; flex-wrap:wrap;
-    }
-    .note{
-      font-size:12px; color:var(--muted2);
-    }
-    .toast{
-      position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
-      background: rgba(15,23,48,.92);
-      border:1px solid rgba(255,255,255,.12);
-      color:var(--text);
-      padding:12px 14px;
-      border-radius:14px;
-      box-shadow: 0 14px 50px rgba(0,0,0,.45);
-      display:none;
-      z-index:99;
-      max-width: calc(100vw - 36px);
-    }
-
     footer{
       padding:40px 0 56px;
       color:var(--muted2);
@@ -509,7 +470,6 @@
       .mobilemenu.show{display:block}
     }
     @media (max-width: 520px){
-      .row{grid-template-columns:1fr}
       .statGrid{grid-template-columns:1fr}
       .hero{padding-top:54px}
     }
@@ -711,7 +671,7 @@
         <div class="heading reveal">
           <div>
             <h2>Process</h2>
-            <p>Simple, predictable delivery with clear checkpoints.</p>
+            <p>Iterative, agile delivery with clear checkpoints and continuous feedback.</p>
           </div>
         </div>
 
@@ -719,22 +679,22 @@
           <div class="step reveal">
             <div class="num">1</div>
             <h4>Discovery</h4>
-            <p>Define goals, scope, constraints, stakeholders, and success metrics. Confirm what “done” means.</p>
+            <p>Collaborate with stakeholders to define goals, constraints, and success metrics. Build an initial product backlog with prioritized user stories and acceptance criteria. Establish the definition of "done" and identify your product owner.</p>
           </div>
           <div class="step reveal">
             <div class="num">2</div>
             <h4>Plan</h4>
-            <p>Propose architecture and milestones. Establish timeline, risks, and a clear communication cadence.</p>
+            <p>Design architecture and select optimal technologies based on your requirements, team capabilities, and long-term maintainability. Create examples and mockups for UI-facing work. Break deliverables into sprint-sized increments, and define timeline estimates and communication channels.</p>
           </div>
           <div class="step reveal">
             <div class="num">3</div>
             <h4>Build</h4>
-            <p>Implement iteratively with secure defaults, peerable deliverables, and visible progress.</p>
+            <p>Develop in short, focused iterations with continuous integration and frequent demos. Each sprint delivers working functionality, allowing for feedback and course correction. Secure defaults, code reviews, and visible progress throughout.</p>
           </div>
           <div class="step reveal">
             <div class="num">4</div>
             <h4>Handoff</h4>
-            <p>Documentation, runbooks, training, and a clean transition plan so you retain full control.</p>
+            <p>Conduct final sprint review and retrospective. Deliver comprehensive documentation, runbooks, and knowledge transfer sessions. Provide a prioritized backlog of future enhancements and a clean transition plan that preserves your team's autonomy.</p>
           </div>
         </div>
       </div>
@@ -747,7 +707,7 @@
           <div>
             <h2>About</h2>
             <p>Engineering-first consulting with a security mindset.</p>
-          </div>
+          </div>    
         </div>
 
         <div class="aboutWrap">
@@ -764,63 +724,18 @@
             </p>
 
             <div class="kvs" aria-label="Business details">
-              <div class="kv"><span><b>Entity</b></span><span>Dispatch Dataworks LLC</span></div>
               <div class="kv"><span><b>Service area</b></span><span>United States (remote)</span></div>
-              <div class="kv"><span><b>Primary site</b></span><span><a href="https://dispatchdataworks.com" rel="noopener">DispatchDataworks.com</a></span></div>
-              <div class="kv"><span><b>Mailing</b></span><span>PO Box 13, Fulton, NY 13069</span></div>
+              <div class="kv"><span><b>Website</b></span><span><a href="https://dispatchdataworks.com" rel="noopener">DispatchDataworks.com</a></span></div>
             </div>
           </div>
 
           <div class="panel reveal" id="contact">
             <h3>Contact</h3>
-            <p>Share a short summary. You’ll get a response with next steps and availability.</p>
-
-            <!-- This form is client-side only. Wire it to your API/email provider later if you want. -->
-            <form id="contactForm" novalidate>
-              <div class="row">
-                <div>
-                  <label for="name">Name</label>
-                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
-                </div>
-                <div>
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
-                </div>
-              </div>
-
-              <div style="height:12px"></div>
-
-              <div class="row">
-                <div>
-                  <label for="company">Company (optional)</label>
-                  <input id="company" name="company" type="text" autocomplete="organization" placeholder="Company name" />
-                </div>
-                <div>
-                  <label for="topic">Topic</label>
-                  <input id="topic" name="topic" type="text" placeholder="Software • Data • Security • IT Strategy" required />
-                </div>
-              </div>
-
-              <div style="height:12px"></div>
-
-              <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="What are you trying to build or improve? What does success look like?" required></textarea>
-              </div>
-
-              <div class="formActions">
-                <button class="btn primary" type="submit">Send message</button>
-                <button class="btn" type="button" id="copyEmail">Copy contact email</button>
-                <span class="note">Form is demo-only until you wire up submission (email/API).</span>
-              </div>
-            </form>
-
-            <div class="divider"></div>
+            <p>Reach out to discuss your project needs.</p>
 
             <div class="kvs" aria-label="Direct contact">
-              <!-- Replace with your real contact email when ready -->
-              <div class="kv"><span><b>Email</b></span><span><a id="emailLink" href="mailto:contact@dispatchdataworks.com">contact@dispatchdataworks.com</a></span></div>
-              <div class="kv"><span><b>PO Box</b></span><span>PO Box 13, Fulton, NY 13069</span></div>
+              <div class="kv"><span><b>Email</b></span><span><a href="mailto:contact@dispatchdataworks.com">contact@dispatchdataworks.com</a></span></div>
+              <div class="kv"><span><b>Mailing address</b></span><span>PO Box 13, Fulton, NY 13069</span></div>
               <div class="kv"><span><b>Response time</b></span><span>Typically within 1–2 business days</span></div>
             </div>
           </div>
@@ -855,8 +770,6 @@
         </div>
       </div>
     </footer>
-
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </main>
 
   <!-- jQuery (required by your request). If you prefer no external scripts, say so and I’ll rewrite without it. -->
@@ -866,13 +779,6 @@
 
   <script>
     (function(){
-      const $toast = $("#toast");
-
-      function showToast(msg){
-        $toast.text(msg).stop(true,true).fadeIn(160);
-        setTimeout(()=> $toast.fadeOut(220), 2200);
-      }
-
       // Year
       $("#year").text(new Date().getFullYear());
 
@@ -920,46 +826,7 @@
       window.addEventListener("scroll", onScroll, { passive:true });
       onScroll();
 
-      // Contact form: client-side placeholder
-      $("#contactForm").on("submit", function(e){
-        e.preventDefault();
 
-        const name = $("#name").val().trim();
-        const email = $("#email").val().trim();
-        const topic = $("#topic").val().trim();
-        const msg = $("#message").val().trim();
-
-        if(!name || !email || !topic || !msg){
-          showToast("Please complete the required fields.");
-          return;
-        }
-
-        // Demo action: build a mailto as a fallback (optional)
-        const to = "contact@dispatchdataworks.com"; // change when ready
-        const subject = encodeURIComponent("[Dispatch Dataworks] " + topic);
-        const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\nCompany: ${($("#company").val()||"").trim()}\n\nMessage:\n${msg}\n`
-        );
-
-        // You can replace this with an API call later.
-        showToast("Drafting your message…");
-        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-      });
-
-      // Copy email button
-      $("#copyEmail").on("click", async function(){
-        const email = "contact@dispatchdataworks.com"; // change when ready
-        try{
-          await navigator.clipboard.writeText(email);
-          showToast("Email copied to clipboard.");
-        }catch{
-          // Fallback
-          const $tmp = $("<input>").val(email).appendTo("body").select();
-          document.execCommand("copy");
-          $tmp.remove();
-          showToast("Email copied.");
-        }
-      });
     })();
   </script>
 </body>
