@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKERN6EFX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FKERN6EFX8');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Dispatch Dataworks LLC</title>
+  <meta name="description" content="Explore open source and public projects from Dispatch Dataworks LLC. Showcasing our engineering capabilities and contributions to the developer community." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo_mark.png">
+
+  <!-- Optional: brand font (safe to remove if you want fully offline assets) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg0:#070A12;
+      --bg1:#0B1020;    
+      --card:#0F1730;
+      --card2:#0C1328;
+      --line:rgba(255,255,255,.08);
+      --text:#EAF0FF;
+      --muted:rgba(234,240,255,.72);
+      --muted2:rgba(234,240,255,.55);
+
+      --accent1:#4EA3FF;  /* blue */
+      --accent2:#FF8A3D;  /* orange */
+      --good:#34D399;
+      --warn:#FBBF24;
+
+      --radius:18px;
+      --radius2:26px;
+      --shadow: 0 12px 40px rgba(0,0,0,.45);
+
+      --maxw:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 15% -10%, rgba(78,163,255,.22), transparent 55%),
+                  radial-gradient(900px 600px at 95% 10%, rgba(255,138,61,.18), transparent 55%),
+                  linear-gradient(180deg, var(--bg0), var(--bg1) 65%, #070A12);
+      background-attachment: fixed;
+      color:var(--text);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.92}
+    img{max-width:100%; height:auto; display:block}
+
+    /* Layout */
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+    .section{padding:86px 0}
+    .section.tight{padding:64px 0}
+
+    /* Top nav */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,18,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      height:70px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:0;
+    }
+    .mark{
+      width:40px; height:40px; border-radius:12px;
+      background:
+        radial-gradient(16px 16px at 30% 35%, rgba(255,255,255,.55), transparent 60%),
+        linear-gradient(135deg, rgba(78,163,255,1), rgba(255,138,61,1));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:after{
+      content:"";
+      position:absolute; inset:-2px;
+      background: linear-gradient(135deg, rgba(255,255,255,.2), transparent 40%, rgba(255,255,255,.12));
+      transform: rotate(18deg);
+    }
+    .brandtext{display:flex; flex-direction:column; gap:2px; min-width:0}
+    .brandname{
+      font-weight:800; letter-spacing:.2px; font-size:14px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .brandsub{font-size:12px; color:var(--muted2)}
+
+    .navlinks{
+      display:flex; align-items:center; gap:18px;
+    }
+    .navlinks a{
+      font-size:13px; color:var(--muted); padding:10px 10px; border-radius:10px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .navlinks a:hover{
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+    }
+    .navcta{
+      display:flex; align-items:center; gap:10px;
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color:var(--text);
+      font-weight:650;
+      font-size:13px;
+      cursor:pointer;
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.16)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(78,163,255,.95), rgba(255,138,61,.95));
+      border-color: rgba(255,255,255,.20);
+      color:#0B1020;
+    }
+    .btn.primary:hover{background: linear-gradient(135deg, rgba(78,163,255,1), rgba(255,138,61,1))}
+    .btn.ghost{background: transparent}
+
+    .hamburger{
+      display:none;
+      width:42px; height:42px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      cursor:pointer;
+      position:relative;
+    }
+    .hamburger span{
+      position:absolute; left:12px; right:12px; height:2px;
+      background: rgba(255,255,255,.75);
+      border-radius:2px;
+      transition: transform .2s ease, top .2s ease, opacity .2s ease;
+    }
+    .hamburger span:nth-child(1){top:14px}
+    .hamburger span:nth-child(2){top:20px}
+    .hamburger span:nth-child(3){top:26px}
+    .hamburger.is-open span:nth-child(1){top:20px; transform: rotate(45deg)}
+    .hamburger.is-open span:nth-child(2){opacity:0}
+    .hamburger.is-open span:nth-child(3){top:20px; transform: rotate(-45deg)}
+
+    .mobilemenu{
+      display:none;
+      border-top:1px solid var(--line);
+      padding:14px 0 18px;
+    }
+    .mobilemenu a{
+      display:block;
+      padding:12px 14px;
+      margin:6px 0;
+      border-radius:12px;
+      color:var(--muted);
+      border:1px solid transparent;
+      background: rgba(255,255,255,.03);
+    }
+    .mobilemenu a:hover{color:var(--text); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.08)}
+    .mobilemenu .row{display:flex; gap:10px; margin-top:10px}
+    .mobilemenu .row .btn{width:100%}
+
+    /* Hero */
+    .hero{
+      padding:78px 0 38px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color:var(--muted);
+      font-size:12px;
+      width:fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(78,163,255,.16);
+    }
+    h1{
+      margin:16px 0 10px;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size: clamp(15px, 1.3vw, 18px);
+      max-width: 58ch;
+      margin: 12px 0 18px;
+    }
+    .heroActions{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 18px}
+
+    /* Section headings */
+    .heading{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px; margin-bottom:22px;
+    }
+    .heading h2{
+      margin:0;
+      font-size: clamp(22px, 2.2vw, 30px);
+      letter-spacing:-.3px;
+    }
+    .heading p{
+      margin:0;
+      color:var(--muted);
+      max-width: 60ch;
+      font-size: 14px;
+    }
+
+    /* Cards grid */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:16px;
+    }
+    .tile{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      position:relative;
+      overflow:hidden;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+    }
+    .tile:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 220px at 20% 0%, rgba(78,163,255,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .tile h3{margin:0 0 8px; font-size:15px; font-weight:850; letter-spacing:-.1px; position:relative}
+    .tile p{margin:0; color:var(--muted); font-size:13px; position:relative; flex:1}
+    .tagRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; position:relative}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(7,10,18,.35);
+      color: var(--muted);
+    }
+
+    .projectLinks{
+      display:flex; gap:10px; margin-top:14px; position:relative;
+    }
+    .projectLinks a{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      font-size:12px;
+      color:var(--text);
+      transition: background .2s ease, border-color .2s ease;
+    }
+    .projectLinks a:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.18);
+    }
+    .projectLinks .icon{
+      width:16px; height:16px;
+      background: var(--text);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+    }
+    .projectLinks .icon-github{
+      mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E");
+    }
+
+    footer{
+      padding:40px 0 56px;
+      color:var(--muted2);
+      border-top:1px solid var(--line);
+      background: rgba(7,10,18,.35);
+    }
+    .footgrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      align-items:start;
+    }
+    .fine{font-size:12px; color:var(--muted2)}
+    .footlinks{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end}
+    .footlinks a{
+      padding:8px 10px; border-radius:12px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:12px; color:var(--muted);
+    }
+
+    /* Reveal animation */
+    .reveal{opacity:0; transform: translateY(12px); transition: opacity .55s ease, transform .55s ease}
+    .reveal.in{opacity:1; transform: translateY(0)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .footgrid{grid-template-columns:1fr}
+      .footlinks{justify-content:flex-start}
+    }
+    @media (max-width: 820px){
+      .navlinks, .navcta{display:none}
+      .hamburger{display:inline-block}
+      .mobilemenu{display:none}
+      .mobilemenu.show{display:block}
+    }
+    @media (max-width: 520px){
+      .hero{padding-top:54px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Dispatch Dataworks LLC Home">
+          <img src="logo_mark.png" alt="Dispatch Dataworks LLC" style="width:40px;height:40px;border-radius:12px">
+          <div class="brandtext">
+            <div class="brandname">Dispatch Dataworks LLC</div>
+            <div class="brandsub">Software • Data • Security</div>
+          </div>
+        </a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#products">Products</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="navcta">
+          <a class="btn ghost" href="index.html#contact">Request a consult</a>
+          <a class="btn primary" href="index.html#contact">Get a quote</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="mobilemenu" id="mobilemenu">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#products">Products</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <div class="row">
+          <a class="btn ghost" href="index.html#contact">Request a consult</a>
+          <a class="btn primary" href="index.html#contact">Get a quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="reveal">
+          <div class="pill">
+            <span class="dot"></span>
+            Open Source & Public Projects
+          </div>
+          <h1>Featured Projects</h1>
+          <p class="lead">
+            Showcasing our open source contributions and public projects. These tools and platforms demonstrate
+            our engineering capabilities and commitment to the developer community.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section tight" id="projects">
+      <div class="container">
+        <div class="heading reveal">
+          <div>
+            <h2>Portfolio</h2>
+            <p>Open source tools and public platforms built by Dispatch Dataworks.</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <article class="tile reveal">
+            <h3>Markdown Forms</h3>
+            <p>Markdown Forms is a lightweight format spec and renderer for building fillable forms in plain Markdown. Author human-readable <code>*.form.md</code> files using simple paper-form patterns (blanks, checkboxes, radios, selects, text areas) with optional inline metadata and validation, then compile to clean HTML and schema output.</p>
+            <div class="tagRow">
+              <span class="tag">PHP</span>
+              <span class="tag">Forms</span>
+              <span class="tag">Markdown</span>
+            </div>
+            <div class="projectLinks">
+              <a href="https://github.com/Dispatch-Dataworks/markdownforms" target="_blank" rel="noopener noreferrer">
+                <span class="icon icon-github"></span>
+                View on GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- Placeholder for future projects -->
+          <!-- Add more project tiles here following the same pattern -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footgrid">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px">
+            <img src="logo_mark.png" alt="Dispatch Dataworks LLC" style="width:34px;height:34px;border-radius:12px">
+            <div>
+              <div style="font-weight:900; letter-spacing:-.2px">Dispatch Dataworks LLC</div>
+              <div class="fine">Software • Data • Security</div>
+            </div>
+          </div>
+          <div class="fine">
+            © <span id="year"></span> Dispatch Dataworks LLC. All rights reserved.
+            <br>
+            Dispatch Dataworks LLC, PO Box 13, Fulton, NY 13069
+          </div>
+        </div>
+
+        <div class="footlinks">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#products">Products</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery (required by your request). If you prefer no external scripts, say so and I'll rewrite without it. -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
+  <script>
+    (function(){
+      // Year
+      $("#year").text(new Date().getFullYear());
+
+      // Mobile menu
+      const $hamburger = $("#hamburger");
+      const $mobilemenu = $("#mobilemenu");
+      $hamburger.on("click", function(){
+        const open = $hamburger.hasClass("is-open");
+        $hamburger.toggleClass("is-open", !open);
+        $hamburger.attr("aria-expanded", String(!open));
+        $mobilemenu.toggleClass("show", !open);
+      });
+
+      // Smooth scroll (with header offset)
+      function scrollToHash(hash){
+        const $t = $(hash);
+        if(!$t.length) return;
+        const offset = $(".topbar").outerHeight() + 16;
+        const top = $t.offset().top - offset;
+        window.scrollTo({ top, behavior:"smooth" });
+      }
+
+      $("a[href^='#']").on("click", function(e){
+        const href = $(this).attr("href");
+        if(!href || href === "#") return;
+        if($(href).length){
+          e.preventDefault();
+          // close mobile menu if open
+          if($hamburger.hasClass("is-open")){
+            $hamburger.trigger("click");
+          }
+          scrollToHash(href);
+        }
+      });
+
+      // Reveal on scroll (lightweight)
+      const $reveal = $(".reveal");
+      function onScroll(){
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        $reveal.each(function(){
+          const r = this.getBoundingClientRect();
+          if(r.top < vh - 80) this.classList.add("in");
+        });
+      }
+      window.addEventListener("scroll", onScroll, { passive:true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
