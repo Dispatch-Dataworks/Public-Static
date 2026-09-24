@@ -68,6 +68,7 @@
     .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
     .section{padding:86px 0}
     .section.tight{padding:64px 0}
+    [id]{scroll-margin-top:86px}
 
     /* Top nav */
     .topbar{
@@ -568,48 +569,6 @@
         if(e.key === "Escape") closeMobileMenu(true);
       });
 
-
-      // Smooth scroll (with header offset)
-      function scrollToHash(hash, behavior){
-        const $t = $(hash);
-        if(!$t.length) return;
-        const offset = $(".topbar").outerHeight() + 16;
-        const top = $t.offset().top - offset;
-        window.scrollTo({ top, behavior: behavior || "smooth" });
-      }
-
-      $("a[href^='#']").on("click", function(e){
-        const href = $(this).attr("href");
-        if(!href || href === "#") return;
-        if($(href).length){
-          e.preventDefault();
-          // close mobile menu if open
-          if($hamburger.hasClass("is-open")){
-            $hamburger.trigger("click");
-          }
-          scrollToHash(href, "smooth");
-          if(window.location.hash !== href){
-            history.pushState(null, "", href);
-          }
-        }
-      });
-
-      function applyCurrentHashOffset(behavior){
-        const hash = window.location.hash;
-        if(hash && $(hash).length){
-          scrollToHash(hash, behavior || "auto");
-        }
-      }
-
-      $(window).on("hashchange", function(){
-        applyCurrentHashOffset("auto");
-      });
-
-      if(window.location.hash){
-        window.requestAnimationFrame(function(){
-          applyCurrentHashOffset("auto");
-        });
-      }
 
       // Reveal on scroll (lightweight)
       const $reveal = $(".reveal");
