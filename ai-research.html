@@ -376,12 +376,12 @@
         </button>
       </div>
 
-      <div class="mobilemenu" id="mobilemenu">
+      <div class="mobilemenu" id="mobilemenu" aria-hidden="true">
         <a href="index.html#services">Services</a>
         <a href="index.html#process">Process</a>
         <a href="index.html#products">Products</a>
         <a href="portfolio.html">Portfolio</a>
-        <a href="ai-research.html">AI Research</a>
+        <a href="ai-research.html" aria-current="page">AI Research</a>
         <a href="index.html#about">About</a>
         <a href="index.html#contact">Contact</a>
         <div class="row">
@@ -548,6 +548,7 @@
         $hamburger.attr("aria-expanded", "false");
         $hamburger.attr("aria-label", "Open menu");
         $mobilemenu.removeClass("show");
+        $mobilemenu.attr("aria-hidden", "true");
         if(returnFocus) $hamburger.trigger("focus");
       }
 
@@ -560,6 +561,7 @@
           $hamburger.attr("aria-expanded", "true");
           $hamburger.attr("aria-label", "Close menu");
           $mobilemenu.addClass("show");
+          $mobilemenu.attr("aria-hidden", "false");
         }
       });
 
