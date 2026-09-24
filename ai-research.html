@@ -371,7 +371,7 @@
           <a class="btn primary" href="index.html#contact">Get a quote</a>
         </div>
 
-        <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobilemenu">
+        <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu">
           <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
         </button>
       </div>
@@ -546,6 +546,7 @@
         if(!$hamburger.hasClass("is-open")) return;
         $hamburger.removeClass("is-open");
         $hamburger.attr("aria-expanded", "false");
+        $hamburger.attr("aria-label", "Open menu");
         $mobilemenu.removeClass("show");
         if(returnFocus) $hamburger.trigger("focus");
       }
@@ -557,6 +558,7 @@
         } else {
           $hamburger.addClass("is-open");
           $hamburger.attr("aria-expanded", "true");
+          $hamburger.attr("aria-label", "Close menu");
           $mobilemenu.addClass("show");
         }
       });
