@@ -561,7 +561,7 @@
       });
 
       $("#mobilemenu a").on("click", function(){
-        closeMobileMenu(true);
+        closeMobileMenu(false);
       });
 
       $(document).on("keydown", function(e){
@@ -588,6 +588,9 @@
             $hamburger.trigger("click");
           }
           scrollToHash(href);
+          if(window.location.hash !== href){
+            history.pushState(null, "", href);
+          }
         }
       });
 
