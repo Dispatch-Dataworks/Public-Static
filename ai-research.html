@@ -566,6 +566,9 @@
             closeMobileMenu(true);
           });
         });
+        window.addEventListener("resize", function(){
+          if(window.innerWidth > 820) closeMobileMenu(false);
+        });
       }
 
       document.addEventListener("keydown", function(e){
