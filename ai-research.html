@@ -605,15 +605,7 @@
         applyCurrentHashOffset("auto");
       });
 
-      window.addEventListener("popstate", function(){
-        if(window.location.hash){
-          applyCurrentHashOffset("auto");
-        }
-      });
-
       if(window.location.hash){
-        if("scrollRestoration" in history) history.scrollRestoration = "manual";
-        window.scrollTo({ top: 0, behavior: "auto" });
         window.requestAnimationFrame(function(){
           applyCurrentHashOffset("auto");
         });
