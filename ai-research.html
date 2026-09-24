@@ -13,7 +13,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Research — Dispatch Dataworks LLC</title>
-  <meta name="description" content="Dispatch Dataworks AI Research: Nori Agent Harness, PACI (Peer Agent Communication Interface), and ongoing peer-agent collaboration experiments." />
+  <meta name="description" content="Dispatch Dataworks AI Research: Nori Agent Harness, PACI (Peer Agent Communication Interface), peer-agent collaboration experiments, and reference documentation on NoriOps.com." />
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo_mark.png">
@@ -545,6 +545,14 @@
         $hamburger.toggleClass("is-open", !open);
         $hamburger.attr("aria-expanded", String(!open));
         $mobilemenu.toggleClass("show", !open);
+      });
+
+      $("#mobilemenu a").on("click", function(){
+        if($hamburger.hasClass("is-open")){
+          $hamburger.removeClass("is-open");
+          $hamburger.attr("aria-expanded", "false");
+          $mobilemenu.removeClass("show");
+        }
       });
 
       // Smooth scroll (with header offset)
