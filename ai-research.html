@@ -551,7 +551,7 @@
         hamburger.addEventListener("click", function(){
           const open = hamburger.classList.contains("is-open");
           if(open){
-            closeMobileMenu(true);
+            closeMobileMenu(false);
           } else {
             hamburger.classList.add("is-open");
             hamburger.setAttribute("aria-expanded", "true");
@@ -572,13 +572,20 @@
         if(e.key === "Escape") closeMobileMenu(true);
       });
 
-      const revealEls = document.querySelectorAll(".reveal");
+      let revealEls = Array.from(document.querySelectorAll(".reveal"));
       function onScroll(){
         const vh = window.innerHeight || document.documentElement.clientHeight;
-        revealEls.forEach(function(el){
+        revealEls = revealEls.filter(function(el){
           const r = el.getBoundingClientRect();
-          if(r.top < vh - 80) el.classList.add("in");
+          if(r.top < vh - 80){
+            el.classList.add("in");
+            return false;
+          }
+          return true;
         });
+        if(!revealEls.length){
+          window.removeEventListener("scroll", onScroll);
+        }
       }
       window.addEventListener("scroll", onScroll, { passive:true });
       onScroll();
