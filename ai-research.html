@@ -370,7 +370,7 @@
           <a class="btn primary" href="index.html#contact">Get a quote</a>
         </div>
 
-        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobilemenu">
+        <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobilemenu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -568,11 +568,6 @@
         if(e.key === "Escape") closeMobileMenu(true);
       });
 
-      $(document).on("focusin", function(e){
-        if(!$hamburger.hasClass("is-open")) return;
-        const insideMenu = $(e.target).closest("#mobilemenu, #hamburger").length > 0;
-        if(!insideMenu) closeMobileMenu(false);
-      });
 
       // Smooth scroll (with header offset)
       function scrollToHash(hash){
