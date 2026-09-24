@@ -570,12 +570,12 @@
 
 
       // Smooth scroll (with header offset)
-      function scrollToHash(hash){
+      function scrollToHash(hash, behavior){
         const $t = $(hash);
         if(!$t.length) return;
         const offset = $(".topbar").outerHeight() + 16;
         const top = $t.offset().top - offset;
-        window.scrollTo({ top, behavior:"smooth" });
+        window.scrollTo({ top, behavior: behavior || "smooth" });
       }
 
       $("a[href^='#']").on("click", function(e){
@@ -587,27 +587,35 @@
           if($hamburger.hasClass("is-open")){
             $hamburger.trigger("click");
           }
-          scrollToHash(href);
+          scrollToHash(href, "smooth");
           if(window.location.hash !== href){
             history.pushState(null, "", href);
           }
         }
       });
 
-      function applyCurrentHashOffset(){
+      function applyCurrentHashOffset(behavior){
         const hash = window.location.hash;
         if(hash && $(hash).length){
-          scrollToHash(hash);
+          scrollToHash(hash, behavior || "auto");
         }
       }
 
-      $(window).on("hashchange popstate", function(){
-        applyCurrentHashOffset();
+      $(window).on("hashchange", function(){
+        applyCurrentHashOffset("auto");
+      });
+
+      window.addEventListener("popstate", function(){
+        if(window.location.hash){
+          applyCurrentHashOffset("auto");
+        }
       });
 
       if(window.location.hash){
+        if("scrollRestoration" in history) history.scrollRestoration = "manual";
+        window.scrollTo({ top: 0, behavior: "auto" });
         window.requestAnimationFrame(function(){
-          applyCurrentHashOffset();
+          applyCurrentHashOffset("auto");
         });
       }
 
