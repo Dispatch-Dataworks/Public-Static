@@ -594,6 +594,23 @@
         }
       });
 
+      function applyCurrentHashOffset(){
+        const hash = window.location.hash;
+        if(hash && $(hash).length){
+          scrollToHash(hash);
+        }
+      }
+
+      $(window).on("hashchange popstate", function(){
+        applyCurrentHashOffset();
+      });
+
+      if(window.location.hash){
+        window.requestAnimationFrame(function(){
+          applyCurrentHashOffset();
+        });
+      }
+
       // Reveal on scroll (lightweight)
       const $reveal = $(".reveal");
       function onScroll(){
