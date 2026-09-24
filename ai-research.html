@@ -12,8 +12,8 @@
 </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PacketDesk — Windows Network Diagnostic Utility</title>
-  <meta name="description" content="PacketDesk is a Windows network diagnostic utility for monitoring connectivity, latency, route behavior, and packet loss. Run traceroutes, monitor latency, and track route hops over time." />
+  <title>AI Research — Dispatch Dataworks LLC</title>
+  <meta name="description" content="Dispatch Dataworks AI Research: Nori Agent Harness, PACI (Peer Agent Communication Interface), and ongoing peer-agent collaboration experiments." />
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo_mark.png">
@@ -185,12 +185,6 @@
     .hero{
       padding:78px 0 38px;
     }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:28px;
-      align-items:stretch;
-    }
     .pill{
       display:inline-flex; align-items:center; gap:10px;
       padding:8px 12px; border-radius:999px;
@@ -218,98 +212,6 @@
       margin: 12px 0 18px;
     }
     .heroActions{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 18px}
-    .mini{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;
-      color:var(--muted2); font-size:12px;
-    }
-    .mini span{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px; border-radius:12px;
-      background: rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.08);
-    }
-    .check{
-      width:16px; height:16px; border-radius:6px;
-      background: rgba(52,211,153,.16);
-      border:1px solid rgba(52,211,153,.35);
-      position:relative;
-    }
-    .check:after{
-      content:"";
-      position:absolute;
-      width:7px; height:4px;
-      border-left:2px solid rgba(52,211,153,.95);
-      border-bottom:2px solid rgba(52,211,153,.95);
-      transform: rotate(-45deg);
-      left:4px; top:4px;
-    }
-
-    .heroCard{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .heroCard:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(500px 240px at 25% 0%, rgba(78,163,255,.22), transparent 55%),
-        radial-gradient(500px 240px at 85% 35%, rgba(255,138,61,.18), transparent 55%);
-      pointer-events:none;
-    }
-    .heroCardInner{
-      position:relative;
-      padding:22px;
-      display:flex;
-      flex-direction:column;
-      height:100%;
-      gap:14px;
-    }
-    .statGrid{
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:6px;
-    }
-    .stat{
-      padding:14px 14px;
-      background: rgba(7,10,18,.45);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 16px;
-    }
-    .stat .k{font-size:12px; color:var(--muted2)}
-    .stat .v{font-size:18px; font-weight:800; margin-top:6px}
-    .stat .s{font-size:12px; color:var(--muted); margin-top:3px}
-
-    .cardTitle{
-      font-weight:800; letter-spacing:-.2px; margin:0;
-      font-size:16px;
-    }
-    .cardSub{color:var(--muted); font-size:13px; margin:0}
-    .divider{height:1px; background: var(--line); margin:6px 0}
-
-    .list{
-      margin:0; padding:0; list-style:none;
-      display:flex; flex-direction:column; gap:10px;
-    }
-    .list li{
-      display:flex; gap:10px; align-items:flex-start;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .bullet{
-      width:26px; height:26px; border-radius:10px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      display:flex; align-items:center; justify-content:center;
-      flex:0 0 auto;
-    }
-    .bullet i{
-      width:10px; height:10px; border-radius:99px;
-      background: linear-gradient(135deg, var(--accent1), var(--accent2));
-    }
 
     /* Section headings */
     .heading{
@@ -348,6 +250,8 @@
       position:relative;
       overflow:hidden;
       min-height: 160px;
+      display: flex;
+      flex-direction: column;
     }
     .tile:before{
       content:"";
@@ -356,7 +260,7 @@
       pointer-events:none;
     }
     .tile h3{margin:0 0 8px; font-size:15px; font-weight:850; letter-spacing:-.1px; position:relative}
-    .tile p{margin:0; color:var(--muted); font-size:13px; position:relative}
+    .tile p{margin:0; color:var(--muted); font-size:13px; position:relative; flex:1}
     .tagRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; position:relative}
     .tag{
       font-size:12px;
@@ -367,65 +271,32 @@
       color: var(--muted);
     }
 
-    .panel{
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      padding:22px;
-      position:relative;
-      overflow:hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,.28);
+    .projectLinks{
+      display:flex; gap:10px; margin-top:14px; position:relative;
     }
-    .panel:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(600px 260px at 20% 0%, rgba(78,163,255,.14), transparent 60%),
-        radial-gradient(600px 260px at 80% 50%, rgba(255,138,61,.12), transparent 60%);
-      pointer-events:none;
+    .projectLinks a{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      font-size:12px;
+      color:var(--text);
+      transition: background .2s ease, border-color .2s ease;
     }
-    .panel > *{position:relative}
-    .panel h3{margin:0 0 10px; font-size:16px; font-weight:900}
-    .panel p{margin:0 0 12px; color:var(--muted); font-size:13px}
-    .kvs{display:grid; gap:10px; margin-top:14px}
-    .kv{
-      display:flex; justify-content:space-between; align-items:center; gap:10px;
-      padding:12px 12px;
-      border-radius:14px;
-      background: rgba(7,10,18,.35);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--muted);
-      font-size:13px;
+    .projectLinks a:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.18);
     }
-    .kv b{color:var(--text)}
-    .kv a{color:var(--text); text-decoration:underline; text-decoration-color: rgba(255,255,255,.25); text-underline-offset:3px}
-
-    .price-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:16px;
-      font-weight:800;
+    .projectLinks .icon{
+      width:16px; height:16px;
+      background: var(--text);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
     }
-    .original-price{
-      text-decoration:line-through;
-      color:var(--muted);
-      opacity:.6;
-    }
-    .free-price{
-      color:var(--good);
-    }
-
-    .screenshotBox{
-      border-radius:var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.02);
-      padding:2px;
-      overflow:hidden;
-    }
-    .screenshotBox img{
-      border-radius:calc(var(--radius2) - 2px);
-      display:block;
+    .projectLinks .icon-github{
+      mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E");
     }
 
     footer{
@@ -455,7 +326,6 @@
 
     /* Responsive */
     @media (max-width: 980px){
-      .heroGrid{grid-template-columns:1fr; }
       .grid3{grid-template-columns:1fr}
       .grid2{grid-template-columns:1fr}
       .footgrid{grid-template-columns:1fr}
@@ -477,7 +347,7 @@
   <header class="topbar">
     <div class="container">
       <div class="nav">
-        <a class="brand" href="index.html" aria-label="Back to Dispatch Dataworks LLC">
+        <a class="brand" href="index.html" aria-label="Dispatch Dataworks LLC Home">
           <img src="logo_mark.png" alt="Dispatch Dataworks LLC" style="width:40px;height:40px;border-radius:12px">
           <div class="brandtext">
             <div class="brandname">Dispatch Dataworks LLC</div>
@@ -489,6 +359,7 @@
           <a href="index.html#services">Services</a>
           <a href="index.html#process">Process</a>
           <a href="index.html#products">Products</a>
+          <a href="portfolio.html">Portfolio</a>
           <a href="ai-research.html">AI Research</a>
           <a href="index.html#about">About</a>
           <a href="index.html#contact">Contact</a>
@@ -508,6 +379,7 @@
         <a href="index.html#services">Services</a>
         <a href="index.html#process">Process</a>
         <a href="index.html#products">Products</a>
+        <a href="portfolio.html">Portfolio</a>
         <a href="ai-research.html">AI Research</a>
         <a href="index.html#about">About</a>
         <a href="index.html#contact">Contact</a>
@@ -523,217 +395,103 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container">
-        <div class="heroGrid">
-          <div class="reveal">
-            <img src="packetdesk_logo.png" alt="PacketDesk Logo" style="max-width:200px;width:100%;height:auto;margin:0 0 20px 0;display:block;object-fit:contain;">
-            <h1>Monitor your network. Identify problems. Troubleshoot faster.</h1>
-            <p class="lead">
-              PacketDesk is a Windows network diagnostic utility for monitoring connectivity, latency, route behavior, and packet loss. Enter a hostname or IP address, start a test, and PacketDesk will run a traceroute, monitor the destination, and track each route hop over time.
-            </p>
-
-            <div class="heroActions">
-              <a class="btn primary" href="PacketDesk.exe" download="PacketDesk.exe">Download for Windows</a>
-              <a href="https://apps.microsoft.com/detail/9plgt1w3vbj1?referrer=appbadge&mode=full" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:6px">
-                <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200" alt="Get from Microsoft Store"/>
-              </a>
-            </div>
-
-            <div class="mini" aria-label="Highlights">
-              <span><span class="check"></span> Free & no account required</span>
-              <span><span class="check"></span> Local processing, zero data collection</span>
-              <span><span class="check"></span> Real-time monitoring & historical tracking</span>
-            </div>
+        <div class="reveal">
+          <div class="pill">
+            <span class="dot"></span>
+            Active Research & Development
           </div>
-
-          <aside class="heroCard reveal" aria-label="Pricing">
-            <div class="heroCardInner">
-              <div>
-                <p class="cardTitle">Pricing</p>
-                <p class="cardSub">Get PacketDesk today</p>
-              </div>
-
-              <div class="statGrid" aria-label="Pricing">
-                <div class="stat" style="grid-column:1/-1;">
-                  <div class="k">Current offer</div>
-                  <div class="price-badge">
-                    <span class="original-price">$1.99</span>
-                    <span class="free-price">FREE</span>
-                  </div>
-                  <div class="s" style="margin-top:8px">Limited time availability</div>
-                </div>
-              </div>
-
-              <div class="divider"></div>
-
-              <ul class="list" aria-label="What's included">
-                <li><span class="bullet"><i></i></span><span><b>Ping monitoring</b> for hostnames and IP addresses</span></li>
-                <li><span class="bullet"><i></i></span><span><b>Traceroute analysis</b> with per-hop monitoring</span></li>
-                <li><span class="bullet"><i></i></span><span><b>Latency tracking</b> with min/max/avg stats</span></li>
-                <li><span class="bullet"><i></i></span><span><b>Visual charts</b> for spotting problems</span></li>
-              </ul>
-
-              <div class="heroActions" style="margin-top:auto">
-                <a class="btn primary" href="PacketDesk.exe" download="PacketDesk.exe">Download Now</a>
-              </div>
-            </div>
-          </aside>
+          <h1>AI Research at Dispatch Dataworks</h1>
+          <p class="lead">
+            Dispatch Dataworks is expanding beyond Consulting, Tools, and Service into AI Research with a focus on practical, self-hosted agent systems and multi-provider model orchestration.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="section tight" id="features">
+    <section class="section tight" id="research-overview">
       <div class="container">
         <div class="heading reveal">
           <div>
-            <h2>Capabilities</h2>
-            <p>Everything you need to diagnose and troubleshoot network issues</p>
+            <h2>Research Focus</h2>
+            <p>We are building applied research capabilities around autonomous agent operations, peer communication, and production-ready deployment workflows.</p>
           </div>
         </div>
-
-        <div class="grid3">
-          <article class="tile reveal">
-            <h3>Ping Monitoring</h3>
-            <p>Continuously monitor latency to any hostname or IP address. Track response times, jitter, and packet loss over hours or days to identify patterns and intermittent issues.</p>
-            <div class="tagRow">
-              <span class="tag">Real-time</span>
-              <span class="tag">Continuous</span>
-              <span class="tag">Configurable</span>
-            </div>
-          </article>
-
-          <article class="tile reveal">
-            <h3>Traceroute & Route Monitoring</h3>
-            <p>Run an initial traceroute, then track each hop along the route over time. Monitor individual routers and network segments to identify which link is causing problems.</p>
-            <div class="tagRow">
-              <span class="tag">Per-hop tracking</span>
-              <span class="tag">Historical</span>
-              <span class="tag">Configurable refresh</span>
-            </div>
-          </article>
-
-          <article class="tile reveal">
-            <h3>Clear Charts & Tables</h3>
-            <p>Results displayed in easy-to-read tables and visual charts. Quickly spot latency spikes, packet loss, unstable hops, and changing network conditions at a glance.</p>
-            <div class="tagRow">
-              <span class="tag">Charts</span>
-              <span class="tag">Tables</span>
-              <span class="tag">Visual analysis</span>
-            </div>
-          </article>
-        </div>
-
-        <div style="height:16px"></div>
 
         <div class="grid2">
           <article class="tile reveal">
-            <h3>Comprehensive Diagnostics</h3>
-            <p>Monitor latency with minimum, maximum, and average response times. Track jitter and packet loss. Adjust ping interval and traceroute refresh frequency to suit your needs.</p>
+            <h3>Nori Agent Harness</h3>
+            <p>
+              Our primary research initiative is the <b>Nori Agent Harness</b>, a custom agent execution and coordination platform designed to be self-hosted and accessible for teams that need direct control over infrastructure and model routing.
+            </p>
+            <p style="margin-top:10px">
+              The harness is designed to support easy deployment and day-to-day usage while allowing integrations with frontier models across multiple providers.
+            </p>
             <div class="tagRow">
-              <span class="tag">Min/max/avg latency</span>
-              <span class="tag">Jitter</span>
-              <span class="tag">Packet loss</span>
+              <span class="tag">Self-hosted</span>
+              <span class="tag">Multi-provider</span>
+              <span class="tag">Frontier models</span>
+              <span class="tag">Agent orchestration</span>
             </div>
           </article>
 
           <article class="tile reveal">
-            <h3>Privacy & Security</h3>
-            <p>PacketDesk processes all diagnostics locally on your device. Network tests run only against destinations you choose. No data collection, storage, or sharing—ever.</p>
+            <h3>PACI Specification</h3>
+            <p>
+              Built in from the start is the <b>PACI spec</b> (Peer Agent Communication Interface), a framework for agent-to-agent communication where peers collaborate and negotiate shared tasks.
+            </p>
+            <p style="margin-top:10px">
+              PACI and the Nori Agent Harness are currently under active development and testing, with updates documented on NoriOps.
+            </p>
             <div class="tagRow">
-              <span class="tag">Local processing</span>
-              <span class="tag">No account</span>
-              <span class="tag">Zero telemetry</span>
+              <span class="tag">PACI</span>
+              <span class="tag">Peer messaging</span>
+              <span class="tag">Protocol design</span>
+              <span class="tag">Active testing</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- USE CASES -->
-    <section class="section" id="usecases">
+    <section class="section" id="peer-experiments">
       <div class="container">
         <div class="heading reveal">
           <div>
-            <h2>Use Cases</h2>
-            <p>PacketDesk is useful for troubleshooting a wide range of network issues</p>
+            <h2>Peer Agent Experiments</h2>
+            <p>Ongoing experiments explore how models behave as peers instead of sub-agents, prioritizing collaboration over direction.</p>
           </div>
         </div>
 
         <div class="grid3">
-          <div class="tile reveal">
-            <h3>Home Networks</h3>
-            <p>Diagnose WiFi and broadband issues. Track latency during gaming, streaming, or video calls to find what's causing slowdowns.</p>
-          </div>
+          <article class="tile reveal">
+            <h3>Peer Collaboration Patterns</h3>
+            <p>Testing communication patterns where agents exchange context, proposals, and conflict resolution signals as collaborators.</p>
+          </article>
 
-          <div class="tile reveal">
-            <h3>Business Networks</h3>
-            <p>Monitor internal and external connectivity. Troubleshoot inter-office latency. Track VPN performance and identify unstable routes.</p>
-          </div>
+          <article class="tile reveal">
+            <h3>Coordination Without Hierarchy</h3>
+            <p>Evaluating task completion approaches that reduce strict top-down orchestration and improve distributed autonomy.</p>
+          </article>
 
-          <div class="tile reveal">
-            <h3>VPN Connections</h3>
-            <p>Monitor VPN tunnel performance. Identify whether latency or packet loss is occurring on your local network, the VPN, or the destination.</p>
-          </div>
-
-          <div class="tile reveal">
-            <h3>Remote Services</h3>
-            <p>Track real-world performance to cloud services, remote servers, and SaaS applications. Correlate performance with user experience reports.</p>
-          </div>
-
-          <div class="tile reveal">
-            <h3>Internet Connectivity</h3>
-            <p>Diagnose ISP performance issues. Monitor your external internet connection and track uptime and quality over time.</p>
-          </div>
-
-          <div class="tile reveal">
-            <h3>Intermittent Issues</h3>
-            <p>Capture historical data showing when and how network conditions change. Build a timeline of problems to share with ISPs or infrastructure teams.</p>
-          </div>
+          <article class="tile reveal">
+            <h3>Operational Write-ups</h3>
+            <p>Documenting novel interaction outcomes and lessons learned as repeatable research notes for future implementation cycles.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- SCREENSHOT -->
-    <section class="section tight" id="screenshot">
-      <div class="container">
-        <div class="heading reveal">
-          <div>
-            <h2>In Action</h2>
-            <p>See PacketDesk's clean interface and real-time monitoring capabilities</p>
-          </div>
-        </div>
-
-        <div class="screenshotBox reveal">
-          <img src="Screenshot 2026-06-16 154605.png" alt="PacketDesk interface showing network monitoring dashboard">
-        </div>
-      </div>
-    </section>
-
-    <!-- DOWNLOAD -->
-    <section class="section">
+    <section class="section tight" id="noriops-reference">
       <div class="container">
         <div class="panel reveal">
-          <h3>Ready to diagnose your network?</h3>
-          <p>Download PacketDesk for free today. No installation required, no account setup, and your diagnostics stay on your device.</p>
-          
-          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:20px">
-            <a class="btn primary" href="PacketDesk.exe" download="PacketDesk.exe">Download for Windows</a>
-            <a href="https://apps.microsoft.com/detail/9plgt1w3vbj1?referrer=appbadge&mode=full" target="_blank" rel="noopener noreferrer">
-              <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="180" alt="Get from Microsoft Store"/>
-            </a>
-            <a class="btn ghost" href="index.html#products">Back to products</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INFO FOOTER -->
-    <section class="section tight">
-      <div class="container">
-        <div style="margin-top:20px; padding:16px; border-radius:14px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08)" class="reveal">
-          <p style="margin:0; font-size:13px; color:var(--muted)">
-            <b>Privacy statement:</b> PacketDesk does not collect, store, sell, or share personal data. Network diagnostics are performed locally on your device and only against destinations you choose to test.
+          <h3>Reference Documentation</h3>
+          <p>
+            Core documentation for the PACI specification and Nori Agent Harness is maintained at NoriOps. Visit the site for the latest architecture notes, protocol details, and testing updates.
           </p>
+          <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <a class="btn primary" href="https://www.noriops.com" target="_blank" rel="noopener noreferrer">Visit NoriOps.com</a>
+            <span class="tag">https://www.noriops.com</span>
+          </div>
         </div>
       </div>
     </section>
@@ -759,7 +517,9 @@
 
         <div class="footlinks">
           <a href="index.html#services">Services</a>
+          <a href="index.html#process">Process</a>
           <a href="index.html#products">Products</a>
+          <a href="portfolio.html">Portfolio</a>
           <a href="ai-research.html">AI Research</a>
           <a href="index.html#about">About</a>
           <a href="index.html#contact">Contact</a>
@@ -768,6 +528,7 @@
     </div>
   </footer>
 
+  <!-- jQuery (required by your request). If you prefer no external scripts, say so and I'll rewrite without it. -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
           crossorigin="anonymous"></script>
@@ -787,6 +548,28 @@
         $mobilemenu.toggleClass("show", !open);
       });
 
+      // Smooth scroll (with header offset)
+      function scrollToHash(hash){
+        const $t = $(hash);
+        if(!$t.length) return;
+        const offset = $(".topbar").outerHeight() + 16;
+        const top = $t.offset().top - offset;
+        window.scrollTo({ top, behavior:"smooth" });
+      }
+
+      $("a[href^='#']").on("click", function(e){
+        const href = $(this).attr("href");
+        if(!href || href === "#") return;
+        if($(href).length){
+          e.preventDefault();
+          // close mobile menu if open
+          if($hamburger.hasClass("is-open")){
+            $hamburger.trigger("click");
+          }
+          scrollToHash(href);
+        }
+      });
+
       // Reveal on scroll (lightweight)
       const $reveal = $(".reveal");
       function onScroll(){
@@ -798,7 +581,6 @@
       }
       window.addEventListener("scroll", onScroll, { passive:true });
       onScroll();
-
     })();
   </script>
 </body>
