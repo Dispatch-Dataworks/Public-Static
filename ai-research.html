@@ -489,7 +489,7 @@
             Core documentation for the PACI specification and Nori Agent Harness is maintained at NoriOps. Visit the site for the latest architecture notes, protocol details, and testing updates.
           </p>
           <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
-            <a class="btn primary" href="https://www.noriops.com" target="_blank" rel="noopener noreferrer">Visit NoriOps.com (opens in new tab)</a>
+            <a class="btn primary" href="https://www.noriops.com" target="_blank" rel="noopener noreferrer" aria-label="Visit NoriOps.com (opens in new tab)">Visit NoriOps.com (opens in new tab)</a>
             <span class="tag">https://www.noriops.com</span>
           </div>
         </div>
@@ -540,20 +540,38 @@
       // Mobile menu
       const $hamburger = $("#hamburger");
       const $mobilemenu = $("#mobilemenu");
+
+      function closeMobileMenu(returnFocus){
+        if(!$hamburger.hasClass("is-open")) return;
+        $hamburger.removeClass("is-open");
+        $hamburger.attr("aria-expanded", "false");
+        $mobilemenu.removeClass("show");
+        if(returnFocus) $hamburger.trigger("focus");
+      }
+
       $hamburger.on("click", function(){
         const open = $hamburger.hasClass("is-open");
-        $hamburger.toggleClass("is-open", !open);
-        $hamburger.attr("aria-expanded", String(!open));
-        $mobilemenu.toggleClass("show", !open);
+        if(open){
+          closeMobileMenu(false);
+        } else {
+          $hamburger.addClass("is-open");
+          $hamburger.attr("aria-expanded", "true");
+          $mobilemenu.addClass("show");
+        }
       });
 
       $("#mobilemenu a").on("click", function(){
-        if($hamburger.hasClass("is-open")){
-          $hamburger.removeClass("is-open");
-          $hamburger.attr("aria-expanded", "false");
-          $mobilemenu.removeClass("show");
-          $hamburger.trigger("focus");
-        }
+        closeMobileMenu(true);
+      });
+
+      $(document).on("keydown", function(e){
+        if(e.key === "Escape") closeMobileMenu(true);
+      });
+
+      $(document).on("focusin", function(e){
+        if(!$hamburger.hasClass("is-open")) return;
+        const insideMenu = $(e.target).closest("#mobilemenu, #hamburger").length > 0;
+        if(!insideMenu) closeMobileMenu(false);
       });
 
       // Smooth scroll (with header offset)
