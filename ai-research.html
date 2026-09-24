@@ -529,58 +529,55 @@
     </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-          crossorigin="anonymous"></script>
-
   <script>
     (function(){
-      // Year
-      $("#year").text(new Date().getFullYear());
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-      // Mobile menu
-      const $hamburger = $("#hamburger");
-      const $mobilemenu = $("#mobilemenu");
+      const hamburger = document.getElementById("hamburger");
+      const mobilemenu = document.getElementById("mobilemenu");
 
       function closeMobileMenu(returnFocus){
-        if(!$hamburger.hasClass("is-open")) return;
-        $hamburger.removeClass("is-open");
-        $hamburger.attr("aria-expanded", "false");
-        $hamburger.attr("aria-label", "Open menu");
-        $mobilemenu.removeClass("show");
-        $mobilemenu.attr("aria-hidden", "true");
-        if(returnFocus) $hamburger.trigger("focus");
+        if(!hamburger || !mobilemenu || !hamburger.classList.contains("is-open")) return;
+        hamburger.classList.remove("is-open");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Open menu");
+        mobilemenu.classList.remove("show");
+        mobilemenu.setAttribute("aria-hidden", "true");
+        if(returnFocus) hamburger.focus();
       }
 
-      $hamburger.on("click", function(){
-        const open = $hamburger.hasClass("is-open");
-        if(open){
-          closeMobileMenu(false);
-        } else {
-          $hamburger.addClass("is-open");
-          $hamburger.attr("aria-expanded", "true");
-          $hamburger.attr("aria-label", "Close menu");
-          $mobilemenu.addClass("show");
-          $mobilemenu.attr("aria-hidden", "false");
-        }
-      });
+      if(hamburger && mobilemenu){
+        hamburger.addEventListener("click", function(){
+          const open = hamburger.classList.contains("is-open");
+          if(open){
+            closeMobileMenu(false);
+          } else {
+            hamburger.classList.add("is-open");
+            hamburger.setAttribute("aria-expanded", "true");
+            hamburger.setAttribute("aria-label", "Close menu");
+            mobilemenu.classList.add("show");
+            mobilemenu.setAttribute("aria-hidden", "false");
+          }
+        });
 
-      $("#mobilemenu a").on("click", function(){
-        closeMobileMenu(false);
-      });
+        mobilemenu.querySelectorAll("a").forEach(function(link){
+          link.addEventListener("click", function(){
+            closeMobileMenu(false);
+          });
+        });
+      }
 
-      $(document).on("keydown", function(e){
+      document.addEventListener("keydown", function(e){
         if(e.key === "Escape") closeMobileMenu(true);
       });
 
-
-      // Reveal on scroll (lightweight)
-      const $reveal = $(".reveal");
+      const revealEls = document.querySelectorAll(".reveal");
       function onScroll(){
         const vh = window.innerHeight || document.documentElement.clientHeight;
-        $reveal.each(function(){
-          const r = this.getBoundingClientRect();
-          if(r.top < vh - 80) this.classList.add("in");
+        revealEls.forEach(function(el){
+          const r = el.getBoundingClientRect();
+          if(r.top < vh - 80) el.classList.add("in");
         });
       }
       window.addEventListener("scroll", onScroll, { passive:true });
