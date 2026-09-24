@@ -551,7 +551,7 @@
         hamburger.addEventListener("click", function(){
           const open = hamburger.classList.contains("is-open");
           if(open){
-            closeMobileMenu(false);
+            closeMobileMenu(true);
           } else {
             hamburger.classList.add("is-open");
             hamburger.setAttribute("aria-expanded", "true");
